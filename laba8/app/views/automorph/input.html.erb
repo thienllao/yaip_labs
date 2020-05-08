@@ -1,0 +1,7 @@
+<h1>Automorph#input</h1>
+<p>Введите n </p>
+<%= form_tag("/automorph/output", :method => "get") do %>
+<%= label_tag("n : ") %>
+<%= text_field_tag(:n) %> <br/><br/>
+<%= submit_tag("Действовать") %>
+<% end %>

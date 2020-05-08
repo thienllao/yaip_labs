@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Лабораторная работа 3.</title>
+		<link rel="stylesheet" href="lab3.css">
+		<script type="text/javascript" src="lab3.js"></script>
+	</head>
+	<body>
+		<form class="row" action="">
+			<label>Наименование:</label>
+			<input type="text" id="lname">
+			<label>Стоимость:</label>
+			<input type="text" id="cost">
+			<button type="button" onclick="add2()">Добавить в корзину</button><br>			
+			<div class="row">Склад</div>			
+			<div class="table" title="Нажмите на строчку, чтобы добавить в корзину" id="t0">
+				<div class="row2">
+					<div class="cell"><span class="hd">Товары</span></div>
+					<div class="cell"><span class="hd">Цена</span></div>
+				</div>
+				<div class="row2" onclick="add(children[0].innerText, children[1].innerText)">
+					<div class="cell">Лампа Xiaomi E27 9Вт</div>
+					<div class="cost">1590</div>
+				</div>
+				<div class="row2" onclick="add(children[0].innerText, children[1].innerText)">
+					<div class="cell">Лампа Philips 10Вт 2700K</div>
+					<div class="cost">1500</div>
+				</div>
+				<div class="row2" onclick="add(children[0].innerText, children[1].innerText)">
+					<div class="cell">Лампа Gauss E27 7Вт 4100K</div>
+					<div class="cost">858</div>
+				</div>
+				<div class="row2" onclick="add(children[0].innerText, children[1].innerText)">
+					<div class="cell">Лампа Navigator GU10 7Вт 4000K</div>
+					<div class="cost">68</div>
+				</div>
+			</div>
+			<div class="table" id="t1">
+				<div class="row">Корзина</div>
+				<div class="row">
+					<div class="cell"><span class="hd">Товары</span></div>
+					<div class="cell"><span class="hd">Цена</span></div>
+					<div class="cell"><span class="hd">Количество</span></div>
+				</div>
+			</div>
+			<button type="button" onclick="summ()">Расчет стоимости</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<form id="input_form">
+    <label for="numbers">Введите N:</label>
+    <br>
+    <input type="text" name="n" id="n">
+    <br>
+    <button type="button" onclick="send_query()">get</button>
+</form>
+
+<div id="result">Результат:</div>
+
+<script>
+    calc_url = location.protocol + "//" + location.host +
+    "/main/calc.json?n="  // урл запроса
+    function send_query(){
+        let frm = document.forms.input_form;
+        let param_str = frm.n.value;
+        if (param_str == "") return false;
+        let response = {};
+        let http_request = new XMLHttpRequest();
+        http_request.open("GET", calc_url + param_str, true);
+        http_request.onreadystatechange = function () {
+            let done = 4, ok = 200;
+            if (http_request.readyState == done &&
+                http_request.status == ok) {
+                response =
+                JSON.parse(http_request.responseText);
+                show_result(response);
+            }
+        };
+        http_request.send(null);
+        return false;
+    }
+    function show_result(data){
+        let result = document.getElementById("result");
+        if (data.bad_input) {
+            result.innerHTML = "<h3>Некорректное значение N</h3>";
+        } else {
+            result.innerHTML = "<h3>Результат:</h3>" + data.numbers;
+        }
+    }
+
+    
+ </script> 

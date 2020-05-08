@@ -1,0 +1,16 @@
+<table border="1px">
+<thead>
+<td>ID</td>
+<td>Username</td>
+<td>Created at</td>
+</thead>
+<tbody>
+<% ActiveSupport::JSON.decode(@users).each do |e| %>
+<tr>
+    <%= content_tag(:td, e['id'])%>
+    <%= content_tag(:td, e['username'])%>
+    <%= content_tag(:td, e['created_at'])%>
+</tr>
+<% end %>
+</tbody>
+</table>

@@ -1,0 +1,6 @@
+<%= form_with url: 'main/view', method: 'get', local:true do |f| %>
+    <%= f.label 'Введите N:' %><br>
+    <%= f.text_field :n %><br>
+    <%= select_tag( :v2, options_for_select([['Server', 1], ['Client', 2]]) ) %> <br>
+    <%= f.submit :get %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Change password</h1>
+<%= form_tag '/passwd' do %>
+   <label>Old Password</label><br>
+   <%= password_field_tag :old_password%><br>
+   <label>New Password</label><br>
+   <%= password_field_tag :password%><br>
+   <%= submit_tag "Change"%>
+<%end%>

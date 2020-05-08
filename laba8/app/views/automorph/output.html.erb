@@ -1,0 +1,21 @@
+<h1>Automorph#output</h1>
+<p>Результат</p>
+<div><%= @error %></div>
+<table border="1px">
+    <thead>
+        <tr>
+            <td>Число</td>
+            <td>Квадрат числа</td>
+        </tr>
+    </thead>
+    <tbody>
+       <% @res.each do |result| %>
+            <tr>
+            <td><%= result[0] %> </td>
+            <td><%= result[1] %> </td>
+            </tr>
+        <% end %>
+        
+    </tbody>
+</table>
+<%= link_to "Назад", :automorph_input %>

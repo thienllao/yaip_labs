@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "QShak", root_path, id: "logo" %>
+      <nav>
+        <ul class="hr">
+          <li><%= link_to "Главная", root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Пользователи", users_path %></li>
+            <li><%= link_to "Профиль", current_user %></li>
+            <li><%= link_to "Выход", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Вход", login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+    <%= yield %>
+  <footer class="footer">
+    <p>QShak</p>
+    <nav>
+      <ul>
+        <li><%= link_to "О нас", about_path %></li>
+        <li><%= link_to "Контакты", contact_path %></li>
+      </ul>
+    </nav>
+  </footer>
+  </body>
+</html>

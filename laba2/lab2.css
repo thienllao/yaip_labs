@@ -1,0 +1,37 @@
+.link {
+	text-decoration: none;
+	color: black;
+	font-family:"Ubuntu Light";
+	font-size: 10pt;
+	background: whitesmoke;
+	border: 1px solid gray;
+	padding: 3px;
+	}
+.red {
+	color: red;
+	font-family: Comic Sans MS;
+	}
+.blue {
+	color: blue;
+	font-family: italic;
+	}
+.hd { 
+	font-family:Ubuntu;
+	font-weight: bold; 
+	}
+.table {
+	display: table;
+	padding: 0;
+	}
+.row {	display: table-row;}
+.cell {
+	border: 1px solid black;
+	display: table-cell;
+	}
+.cell:hover{
+	background-color: aqua;
+	}
+div {
+	margin: 5px; 
+	padding: 5px;
+}
